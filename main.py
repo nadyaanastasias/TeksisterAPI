@@ -1,0 +1,103 @@
+'''
+
+Made with Python v3.x.x.
+
+Command to install libraries:
+  - pip install --user requests
+  - pip install --user beautifulsoup4
+
+Command to run program:
+  - python main.py
+
+'''
+
+import server.server as server
+import server.response as response
+import crawler.controller as crawler
+import account.controller as account
+
+'''
+Endpoint untuk akses data sepeda. Bisa diakses di http://localhost:3000/bicycle.
+
+Di web Bukalapak banyak page-nya. Bisa ganti page pake query string,
+misal http://localhost:3000/bicycle?page=10.
+'''
+@server.GET('/bicycle')
+def search_bicycle(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_bicycles(int(page))
+
+  return response.json(data)
+
+'''
+Endpoint untuk liat account-account yang tersimpan.
+'''
+@server.GET('/account')
+def get_accounts(args):
+  data = account.get_accounts()
+
+  return response.json({'data': data})
+
+'''
+Endpoint untuk menyimpan account baru dengan POST method.
+'''
+@server.POST('/account')
+def insert_account(args):
+  account.new(args['body'])
+  message = {'message': 'successfully save new account'}
+
+  return response.json(message)
+
+'''
+Endpoint untuk memodifikasi data account berdasarkan id-nya dengan PUT method.
+
+Data yang mau diubah dicari dulu id-nya, dengan GET /account.
+id dari account dimasukan ke request path, misalnya PUT /account/1571553842.
+'''
+@server.PUT('/account/:id')
+def update_account(args):
+  data = args['body']
+
+  updated_count = account.update(args['params']['id'], data)
+
+  if updated_count == 0:
+    return response.json({'message': 'nothing is updated'})
+  else:
+    return response.json({'message': 'successfully update account'})
+
+'''
+Endpoint untuk menghapus data account berdasarkan id-nya dengan DELETE method.
+
+Data yang mau dihapus dicari dulu id-nya, dengan GET /account.
+id dari account dimasukan ke request path, misalnya DELETE /account/1571553842.
+'''
+@server.DELETE('/account/:id')
+def delete_account(args):
+  deleted_count = account.delete(args['params']['id'])
+
+  if deleted_count == 0:
+    return response.json({'message': 'nothing is deleted'})
+  else:
+    return response.json({'message': 'successfully delete account'})
+
+'''
+Nothing. Just. Hello :)
+'''
+@server.GET('/')
+def hello(args):
+  print(args)
+
+  data = {'message': 'Hello!'}
+
+  return response.json(data)
+
+'''
+Start server di port 3000.
+'''
+if __name__ == "__main__":
+  print('Server listening on port 3000.')
+  server.start(3000)
