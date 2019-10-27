@@ -12,17 +12,17 @@ Penjelasan File :
 
 Penggunaan :
 1. Terdapat beberapa endpoint yang bisa diakses melalui web browser
-   http://localhost:3000/ -> halaman utama
-   http://localost:3000/tas -> menghasilkan Json harga, kategori dan nama tas BukaLapak
-   http://localost:3000/sandal -> menghasilkan Json harga, kategori dan nama sandal BukaLapak
-   http://localost:3000/jumpsuit -> menghasilkan Json harga, kategori dan jumpsuit tas BukaLapak
-   http://localost:3000/kaos -> menghasilkan Json harga, kategori dan nama kaos BukaLapak
-   http://localost:3000/poloshirt -> menghasilkan Json harga, kategori dan nama poloshirt BukaLapak
+   -http://localhost:3000/ -> halaman utama
+   -http://localost:3000/tas -> menghasilkan Json harga, kategori dan nama tas BukaLapak
+   -http://localost:3000/sandal -> menghasilkan Json harga, kategori dan nama sandal BukaLapak
+   -http://localost:3000/jumpsuit -> menghasilkan Json harga, kategori dan jumpsuit tas BukaLapak
+   -http://localost:3000/kaos -> menghasilkan Json harga, kategori dan nama kaos BukaLapak
+   -http://localost:3000/poloshirt -> menghasilkan Json harga, kategori dan nama poloshirt BukaLapak
  2. Menggunakan postman
-   . Dapat menggunakan metode PUSH account (nama,email,username) 
-   . Dapat menggunakan metode PUT untuk mengupdate account
-   . Dapat menggunakan metode DELETE untuk menghapus account
-   . Dapat menggunakan metode GET untuk mendapat semua info akun yang ada
-   . Dapat menggunakan metode GET seperti di web browser
+   -Dapat menggunakan metode PUSH account (nama,email,username) 
+   -Dapat menggunakan metode PUT untuk mengupdate account
+   -Dapat menggunakan metode DELETE untuk menghapus account
+   -Dapat menggunakan metode GET untuk mendapat semua info akun yang ada
+   -Dapat menggunakan metode GET seperti di web browser
  
  Thank You :D
