@@ -22,14 +22,58 @@ Endpoint untuk akses data sepeda. Bisa diakses di http://localhost:3000/bicycle.
 Di web Bukalapak banyak page-nya. Bisa ganti page pake query string,
 misal http://localhost:3000/bicycle?page=10.
 '''
-@server.GET('/bicycle')
-def search_bicycle(args):
+@server.GET('/tas')
+def search_tas(args):
   page = 1
 
   if 'page' in args['query']:
     page = args['query']['page']
 
-  data = crawler.get_bicycles(int(page))
+  data = crawler.get_tas(int(page))
+
+  return response.json(data)
+
+@server.GET('/sandal')
+def search_sandal(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_sandal(int(page))
+
+  return response.json(data)
+
+@server.GET('/kaos')
+def search_kaos(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_kaos(int(page))
+
+  return response.json(data)
+
+@server.GET('/jumpsuit')
+def search_sandal(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_jumpsuit(int(page))
+
+  return response.json(data)
+
+@server.GET('/poloshirt')
+def search_poloshirt(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_poloshirt(int(page))
 
   return response.json(data)
 
