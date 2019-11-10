@@ -17,10 +17,10 @@ import crawler.controller as crawler
 import account.controller as account
 
 '''
-Endpoint untuk akses data sepeda. Bisa diakses di http://localhost:3000/bicycle.
+Endpoint untuk akses data. Bisa diakses di http://localhost:3000/tas.
 
 Di web Bukalapak banyak page-nya. Bisa ganti page pake query string,
-misal http://localhost:3000/bicycle?page=10.
+misal http://localhost:3000/tas?page=10.
 '''
 @server.GET('/tas')
 def search_tas(args):
