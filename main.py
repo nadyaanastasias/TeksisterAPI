@@ -77,9 +77,76 @@ def search_poloshirt(args):
 
   return response.json(data)
 
+@server.GET('/keretabayi')
+def search_keretabayi(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_keretabayi(int(page))
+
+  return response.json(data)
+
+@server.GET('/kursimobil')
+def search_kursimobil(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_kursimobil(int(page))
+
+  return response.json(data)
+
+@server.GET('/makananbayi')
+def search_makananbayi(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_makananbayi(int(page))
+
+  return response.json(data)
+
+@server.GET('/perlengkapanmandi')
+def search_perlengkapanmandi(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_perlengkapanmandi(int(page))
+
+  return response.json(data)
+
+@server.GET('/dekorasikamar')
+def search_dekorasikamar(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_dekorasikamar(int(page))
+
+  return response.json(data)
+
+@server.GET('/mainan')
+def search_mainan(args):
+  page = 1
+
+  if 'page' in args['query']:
+    page = args['query']['page']
+
+  data = crawler.get_mainan(int(page))
+
+  return response.json(data)
+
 '''
 Endpoint untuk liat account-account yang tersimpan.
 '''
+
 @server.GET('/account')
 def get_accounts(args):
   data = account.get_accounts()
@@ -143,5 +210,5 @@ def hello(args):
 Start server di port 3000.
 '''
 if __name__ == "__main__":
-  print('Server listening on port 3000.')
-  server.start(3000)
+  print('Server listening on port 3500.')
+  server.start(3500)
