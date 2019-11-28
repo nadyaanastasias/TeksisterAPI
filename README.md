@@ -25,4 +25,8 @@ Penggunaan :
    - Dapat menggunakan metode GET untuk mendapat semua info akun yang ada
    - Dapat menggunakan metode GET seperti di web browser
  
+<<<<<<< HEAD
  Thank You :D
+=======
+ Thank You :D
+>>>>>>> 032ce1581db940e2db258622e6814c39e2babbca

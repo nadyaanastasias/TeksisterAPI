@@ -247,8 +247,8 @@ def get_mainan(page=1):
   
   return result
 
-def get_dekorasikamar(page=1):
-  endpoint = '/c/rumah-tangga/furniture-interior/dekorasi-rumah'
+def get_handuk(page=1):
+  endpoint = '/c/rumah-tangga/kamar-mandi?from=omnisearch&from_keyword_history=false&search%5Bkeywords%5D=handuk&search_source=omnisearch_category&source=navbar'
   response = request.get(endpoint, page)
   try:
     f = open("html/bukalapak.html","w")
