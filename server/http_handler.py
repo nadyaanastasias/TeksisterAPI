@@ -72,12 +72,11 @@ class Handler(BaseHTTPRequestHandler):
   '''
   def respond(self, response):
     self.send_response(response['status_code'])
-
+    self.send_header("Access-Control-Allow-Origin","*")
     headers = response['headers']
     for key in headers:
       self.send_header(key, headers[key])
     self.end_headers()
-
     self.wfile.write(bytes(response['data'], 'UTF-8'))
 
   '''
